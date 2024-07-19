@@ -124,11 +124,5 @@ int main() {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    //for (const auto& arr : test_case)
-    //    ans.push_back(getSmallestString(arr));
-
-    //for (int i = 0; i < ans.size(); i++)
-    //    cout << "Case: " << (i + 1) << '\t' << boolalpha << ans[i] << endl;
-
     return 0;
 }
