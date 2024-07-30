@@ -1,4 +1,4 @@
-﻿#include <iostream>, 
+﻿#include <iostream>
 #include <vector>
 #include <map>
 #include <unordered_map>
@@ -175,37 +175,64 @@ mappping[nums[i][i]] = 6
 
 */
 
-vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
-    unordered_map<int, int> mappingMap;
-    for(auto by : mapping) 
-        mappingMap[by] = by;
 
-    list<int> numbers;
-    for(int i  = nums[0]; i > 10; i / 10)
-        numbers.push_front(i % 10);
-    
-    return mapping;
-}
+// class Solution {
+// public:
+//     static int convert(int x, vector<int>& mapping){
+//         if (x==0) return mapping[0];//  edge case
+//         int z=0;
+//         for(int pow10=1; x>0; pow10*=10){
+//             auto [q, r]=div(x, 10);
+//             z+=mapping[r]*pow10;
+//             x=q;
+//         }
+//         return z;
+//     }
+//     static vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
+//         const int n=nums.size();
+//         unordered_map<int, int> f;
+//         f.reserve(n);
+//         for(int i=0; i<n; i++) 
+//             f[nums[i]]=convert(nums[i], mapping);
+//         stable_sort(nums.begin(), nums.end(), [&](int x, int y){
+//             return f[x]<f[y];
+//         });
+//         return nums;
+//     }
+// };  
+
+
+/////// Not Working ///////
+// ListNode* ReversList(ListNode* head)
+// {
+//     ListNode* temp;
+//     if(head->next == nullptr)
+//     {
+//         temp = head;
+//         return temp;
+//     }
+
+//     ReversList(head->next);
+//     temp->next = head;
+//     return temp;
+// }
 
 int main() {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    arr_i _mapping{8,9,4,0,2,1,3,5,7,6}, 
-          _nums{991,338,38};
-
-    arr_i nums = sortJumbled(_mapping, _nums);
+    //arr_i nums = sortJumbled(_mapping, _nums);
     
     // for(auto& by : nums)
     //     cout << by;
 
 
-    list<int> numbers;
-    for(int i  = _nums[0]; i > 10; i / 10)
-        numbers.push_front(i % 10);
+    //arr_i numbers;
+    //for(int i  = _nums[0]; i > 10; i / 10)
+    //    numbers.push_back(i % 10);
 
-    for(auto nm : numbers)
-        cout <<  "Value-of-element -> "<< nm << endl;
+    //for(auto nm = _nums[0]; nm > 0; nm /= 10)
+        //cout <<  "Value-of-element -> "<< nm%10 << endl;
     
     
     return 0;
